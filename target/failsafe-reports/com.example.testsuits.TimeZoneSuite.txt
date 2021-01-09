@@ -1,0 +1,11 @@
+-------------------------------------------------------------------------------
+Test set: com.example.testsuits.TimeZoneSuite
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 1.623 s <<< FAILURE! - in com.example.testsuits.TimeZoneSuite
+com.example.testsuits.TimeZoneSuite  Time elapsed: 1.621 s  <<< ERROR!
+cucumber.runtime.CucumberException: 
+Could not create a cucumber expression for 'It should return {String} and timezone with all {String}'.
+It appears you did not register parameter type. The details are in the stacktrace below.
+You can find the documentation here: https://docs.cucumber.io/cucumber/cucumber-expressions/
+Caused by: io.cucumber.cucumberexpressions.UndefinedParameterTypeException: Undefined parameter type {String}. Please register a ParameterType for {String}.
+
