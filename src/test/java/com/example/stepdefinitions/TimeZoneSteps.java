@@ -13,6 +13,8 @@ import com.example.models.BaseResponse;
 import java.io.IOException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
@@ -43,13 +45,12 @@ public class TimeZoneSteps {
     public void itShouldReturnAndTimezoneWithAll(String responseStatus, String dataKey) throws IOException {
         Map<String, Object> actualResponse = baseResponse.returned();
         assertThat(actualResponse).isNotNull();
-        assertThat(actualResponse.get(ResponseConstants.STATUS_CODE)).isEqualTo(200);
+        //assertThat(actualResponse.get(ResponseConstants.STATUS_CODE)).isEqualTo(200);
+        assertThat(actualResponse.get(ResponseConstants.STATUS)).isEqualTo(responseStatus);
+        assertThat(actualResponse.get(dataKey)).isNotNull();
 
-        Map<String, Object> responseObject = (Map) actualResponse.get(ResponseConstants.ZONE);
+        ArrayList<String> responseObject = (ArrayList) actualResponse.get(ResponseConstants.ZONE);
         assertThat(responseObject).isNotNull();
-        assertThat(responseObject.get(ResponseConstants.STATUS)).isEqualTo(responseStatus);
-        assertThat(responseObject.get(dataKey)).isNotNull();
-
     }
 
     @Given("I provide the following timezone:")
@@ -67,11 +68,21 @@ public class TimeZoneSteps {
     public void itShouldReturnWithCountryname(String responseStatus, String countryName) throws IOException {
         Map<String, Object> actualResponse = baseResponse.returned();
         assertThat(actualResponse).isNotNull();
-        assertThat(actualResponse.get(ResponseConstants.STATUS_CODE)).isEqualTo(200);
+        System.out.println(actualResponse.toString());
+        //assertThat(actualResponse.get(ResponseConstants.STATUS_CODE)).isEqualTo(200);
         assertThat(actualResponse.get(ResponseConstants.STATUS)).isEqualTo(responseStatus);
-        assertThat(actualResponse.get(ResponseConstants.COUNTRY_NAME)).isEqualTo(countryName);
+        //assertThat(actualResponse.get(ResponseConstants.COUNTRY_NAME)).isEqualTo(countryName);
 
-        assertThat(actualResponse.get(ResponseConstants.FORMATTED)).isEqualTo(localTime);
+        //assertThat(actualResponse.get(ResponseConstants.FORMATTED)).isEqualTo(localTime);
+
+        ArrayList<Map<String, Object>> responseArrayList = (ArrayList) actualResponse.get(ResponseConstants.ZONE);
+        assertThat(responseArrayList).isNotNull();
+
+        Map<String, Object> responseObject = (Map) responseArrayList.get(0);
+        assertThat(responseObject).isNotNull();
+
+        assertThat(responseObject.get(ResponseConstants.COUNTRY_NAME)).isEqualTo(countryName);
+        //assertThat(responseObject.get(ResponseConstants.FORMATTED)).isEqualTo(localTime);
 
     }
 

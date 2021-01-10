@@ -1,7 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?><testsuite errors="0" failures="2" name="Get the timezone" skipped="0" tests="2" time="18.66" timestamp="2021-01-09 02:50:56"><testcase name="Get all timezones"><failure message="expected:&lt;200&gt; but was:&lt;null&gt;" type="java.lang.AssertionError">expected:&lt;200&gt; but was:&lt;null&gt;</failure><system-err>expected:&lt;200&gt; but was:&lt;null&gt;
-com.example.stepdefinitions.TimeZoneSteps.itShouldReturnAndTimezoneWithAll(TimeZoneSteps.java:46)
-✽.It should return "OK" and timezone with all "zones"(file:src/test/resources/features/timezone.feature:6)
-</system-err></testcase><testcase name="Get localtime timezone"><failure message="expected:&lt;200&gt; but was:&lt;null&gt;" type="java.lang.AssertionError">expected:&lt;200&gt; but was:&lt;null&gt;</failure><system-err>expected:&lt;200&gt; but was:&lt;null&gt;
-com.example.stepdefinitions.TimeZoneSteps.itShouldReturnWithCountryname(TimeZoneSteps.java:70)
-✽.It should return "OK" with countryname "India"(file:src/test/resources/features/timezone.feature:13)
-</system-err></testcase></testsuite>
+<?xml version="1.0" encoding="UTF-8"?><testsuite errors="0" failures="0" name="Get the timezone" skipped="0" tests="2" time="10.36" timestamp="2021-01-10 08:17:51"><testcase name="Get all timezones"/><testcase name="Get localtime timezone"/></testsuite>

@@ -8,7 +8,7 @@ public class ResponseConstants {
     // Common
     public static final String STATUS_CODE = "statusCode";
     public static final String STATUS = "status";
-    public static final String ZONE = "zone";
+    public static final String ZONE = "zones";
     public static final String COUNTRY_NAME = "countryName";
     public static final String FORMATTED = "formatted";
 }
